@@ -29,33 +29,61 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  bool showPopup1 = false;
+  bool showPopup2 = false;
+  bool showPopup3 = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: SizedBox(
-          height: 150,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              ElevatedButton(
-                child: Text('Popup with child'),
-                onPressed: () {},
+      body: Stack(
+        children: [
+          // Buttons
+          Center(
+            child: SizedBox(
+              height: 150,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  ElevatedButton(
+                    child: Text('Popup with child'),
+                    onPressed: () => setState(() => showPopup1 = !showPopup1),
+                  ),
+                  ElevatedButton(
+                    child: Text('Popup with text'),
+                    onPressed: () => setState(() => showPopup2 = !showPopup2),
+                  ),
+                  ElevatedButton(
+                    child: Text('Popup with textfield'),
+                    onPressed: () => setState(() => showPopup3 = !showPopup3),
+                  ),
+                ],
               ),
-              ElevatedButton(
-                child: Text('Popup with text'),
-                onPressed: () {},
-              ),
-              ElevatedButton(
-                child: Text('Popup with textfield'),
-                onPressed: () {},
-              ),
-            ],
+            ),
           ),
-        ),
+          // Popups
+          if (showPopup1)
+            AnimatedPopupDialog(
+              child: Icon(Icons.access_alarm),
+              closeHandler: () => setState(() => showPopup1 = !showPopup1),
+            ),
+          if (showPopup2)
+            AnimatedPopupDialog.text(
+              title: 'Title',
+              text:
+                  'For details regarding fonts from package dependencies, see https://flutter.dev/custom-fonts/#from-packages',
+              closeHandler: () => setState(() => showPopup2 = !showPopup2),
+            ),
+          if (showPopup3)
+            AnimatedPopupDialog.textfield(
+              title: 'Title',
+              textFieldText: 'textFieldText',
+              closeHandler: () => setState(() => showPopup3 = !showPopup3),
+            ),
+        ],
       ),
     );
   }

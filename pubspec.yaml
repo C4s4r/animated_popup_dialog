@@ -12,6 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  motion_widget: ^1.0.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

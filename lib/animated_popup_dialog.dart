@@ -14,14 +14,12 @@ class AnimatedPopupDialog extends StatelessWidget {
   String textFieldText;
   String buttonText;
   Widget child;
-  Function closeHandler;
   final bool useWithTransition;
 
   AnimatedPopupDialog({
     @required this.child,
     this.useWithTransition = true,
     this.buttonText = 'Schließen',
-    @required this.closeHandler,
   }) {
     mode = PopupMode.Child;
   }
@@ -30,7 +28,6 @@ class AnimatedPopupDialog extends StatelessWidget {
     @required this.title,
     @required this.text,
     this.buttonText = 'Schließen',
-    @required this.closeHandler,
     this.useWithTransition = true,
   }) {
     mode = PopupMode.Text;
@@ -40,7 +37,6 @@ class AnimatedPopupDialog extends StatelessWidget {
     @required this.title,
     @required this.textFieldText,
     this.buttonText = 'Schließen',
-    @required this.closeHandler,
     this.useWithTransition = true,
   }) {
     mode = PopupMode.Textfield;
@@ -144,7 +140,11 @@ class AnimatedPopupDialog extends StatelessWidget {
                             ),
                             //onPressed: closeHandler,
                             onPressed: () {
-                              Navigator.pop(context, textFieldController.value.text);
+                              if (mode == PopupMode.Textfield) {
+                                Navigator.pop(context, textFieldController.value.text);
+                              } else {
+                                Navigator.pop(context);
+                              }
                             },
                             child: Text(buttonText),
                           ),

@@ -6,7 +6,7 @@ class CustomTextField extends StatefulWidget {
 
   CustomTextField({
     @required this.textFieldController,
-    this.textFieldText,
+    this.textFieldText = '',
   });
 
   @override

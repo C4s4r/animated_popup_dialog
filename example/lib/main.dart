@@ -58,7 +58,19 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   ElevatedButton(
                     child: Text('Popup with textfield'),
-                    onPressed: () => setState(() => showPopup3 = !showPopup3),
+                    onPressed: () async {
+                      String result = await Navigator.of(context).push(PageRouteBuilder(
+                        opaque: false,
+                        pageBuilder: (context, _, __) {
+                          return AnimatedPopupDialog.textfield(
+                            title: 'Title',
+                            textFieldText: 'textFieldText',
+                            closeHandler: () {},
+                          );
+                        },
+                      ));
+                      print(result);
+                    },
                   ),
                 ],
               ),

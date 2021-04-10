@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatefulWidget {
+  final TextEditingController textFieldController;
   final String textFieldText;
 
-  CustomTextField(this.textFieldText);
+  CustomTextField({
+    @required this.textFieldController,
+    this.textFieldText,
+  });
 
   @override
   _CustomTextFieldState createState() => _CustomTextFieldState();
@@ -36,6 +40,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   Widget build(BuildContext context) {
     return TextField(
       focusNode: focusNode,
+      controller: widget.textFieldController,
       style: TextStyle(color: const Color.fromRGBO(32, 41, 47, 1), letterSpacing: 0.5),
       cursorColor: const Color.fromRGBO(32, 41, 47, 1),
       decoration: InputDecoration(

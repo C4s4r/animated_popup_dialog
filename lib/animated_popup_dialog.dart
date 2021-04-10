@@ -9,18 +9,34 @@ enum PopupMode { Child, Text, Textfield }
 
 class AnimatedPopupDialog extends StatelessWidget {
   PopupMode mode;
+
+  /// Manually set the `width` value of the PopupDialog.
+  /// If null, 30% of the available width are used.
   double width;
+
+  /// The widget displayed inside the PopupDialog
   Widget child;
+
+  /// When using `AnimatedPopupDialog.text()` or `AnimatedPopupDialog.textfield()`,
+  /// this sets the title text of the PopupDialog.
   String title;
+
+  /// When using `AnimatedPopupDialog.text()`, this sets the content text of the PopupDialog.
   String description;
+
+  /// When using `AnimatedPopupDialog.textfield()`, this sets the hint text of the textfield.
   String textFieldText;
+
+  /// Manually set the text within the button.
   String buttonText;
+
+  /// Wether to use the PopupDialog with a transition or not.
   final bool useWithTransition;
 
   AnimatedPopupDialog({
     this.width,
     @required this.child,
-    this.buttonText = 'Schließen',
+    this.buttonText = 'Close',
     this.useWithTransition = true,
   }) {
     mode = PopupMode.Child;
@@ -30,7 +46,7 @@ class AnimatedPopupDialog extends StatelessWidget {
     this.width,
     @required this.title,
     @required this.description,
-    this.buttonText = 'Schließen',
+    this.buttonText = 'Close',
     this.useWithTransition = true,
   }) {
     mode = PopupMode.Text;
@@ -40,7 +56,7 @@ class AnimatedPopupDialog extends StatelessWidget {
     this.width,
     @required this.title,
     @required this.textFieldText,
-    this.buttonText = 'Schließen',
+    this.buttonText = 'Close',
     this.useWithTransition = true,
   }) {
     mode = PopupMode.Textfield;

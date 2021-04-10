@@ -29,7 +29,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     pageBuilder: (context, _, __) {
                       return AnimatedPopupDialog.text(
                         title: 'Title',
-                        text:
+                        description:
                             'For details regarding fonts from package dependencies, see https://flutter.dev/custom-fonts/#from-packages',
                       );
                     },
@@ -82,7 +81,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       );
                     },
                   ));
-                  print(result);
                 },
               ),
             ],

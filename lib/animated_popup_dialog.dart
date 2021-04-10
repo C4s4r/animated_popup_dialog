@@ -9,24 +9,27 @@ enum PopupMode { Child, Text, Textfield }
 
 class AnimatedPopupDialog extends StatelessWidget {
   PopupMode mode;
+  double width;
+  Widget child;
   String title;
-  String text;
+  String description;
   String textFieldText;
   String buttonText;
-  Widget child;
   final bool useWithTransition;
 
   AnimatedPopupDialog({
+    this.width,
     @required this.child,
-    this.useWithTransition = true,
     this.buttonText = 'Schließen',
+    this.useWithTransition = true,
   }) {
     mode = PopupMode.Child;
   }
 
   AnimatedPopupDialog.text({
+    this.width,
     @required this.title,
-    @required this.text,
+    @required this.description,
     this.buttonText = 'Schließen',
     this.useWithTransition = true,
   }) {
@@ -34,6 +37,7 @@ class AnimatedPopupDialog extends StatelessWidget {
   }
 
   AnimatedPopupDialog.textfield({
+    this.width,
     @required this.title,
     @required this.textFieldText,
     this.buttonText = 'Schließen',
@@ -91,7 +95,7 @@ class AnimatedPopupDialog extends StatelessWidget {
                 displacement: useWithTransition ? 50 : 0,
                 child: Center(
                   child: Container(
-                    width: media.size.width * 0.3,
+                    width: width == null ? media.size.width * 0.3 : width,
                     padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -123,7 +127,7 @@ class AnimatedPopupDialog extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(top: 0),
                             child: Text(
-                              text,
+                              description,
                               style:
                                   Theme.of(context).textTheme.bodyText2.copyWith(color: Color.fromRGBO(51, 51, 51, 1)),
                               textAlign: TextAlign.center,
@@ -138,7 +142,6 @@ class AnimatedPopupDialog extends StatelessWidget {
                             style: TextButton.styleFrom(
                               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                             ),
-                            //onPressed: closeHandler,
                             onPressed: () {
                               if (mode == PopupMode.Textfield) {
                                 Navigator.pop(context, textFieldController.value.text);

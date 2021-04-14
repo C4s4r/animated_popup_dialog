@@ -1,8 +1,9 @@
 name: animated_popup_dialog
 description: An animated dialog to display a child, text or textfield in a modern look.
 version: 0.0.1
-author: Roundbased
-homepage: https://github.com/C4s4r/animated_popup_dialog
+homepage: https://pub.dev/packages/animated_popup_dialog
+repository: https://github.com/C4s4r/animated_popup_dialog
+issue_tracker: https://github.com/C4s4r/animated_popup_dialog/issues
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -11,7 +12,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   motion_widget: ^1.0.2
 
 dev_dependencies:

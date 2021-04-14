@@ -61,9 +61,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     opaque: false,
                     pageBuilder: (context, _, __) {
                       return AnimatedPopupDialog.text(
-                        title: 'Title',
+                        title: 'AnimatedPopupDialog',
                         description:
-                            'For details regarding fonts from package dependencies, see https://flutter.dev/custom-fonts/#from-packages',
+                            'For details regarding the use of the package, see https://github.com/C4s4r/animated_popup_dialog',
                       );
                     },
                   ));

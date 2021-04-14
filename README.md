@@ -1,5 +1,5 @@
 # Animated Popup Dialog
-[![GitHub last commit](https://img.shields.io/github/last-commit/C4s4r/animated_popup_dialog?label=last%20updated)](https://github.com/C4s4r/animated_popup_dialog)
+[![GitHub last commit](https://img.shields.io/github/last-commit/C4s4r/animated_popup_dialog?label=last%20updated)](https://github.com/C4s4r/animated_popup_dialog/commits/)
 [![GitHub](https://img.shields.io/github/license/C4s4r/animated_popup_dialog)](https://opensource.org/licenses/BSD-3-Clause)
 
 

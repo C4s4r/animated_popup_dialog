@@ -26,13 +26,13 @@ A package that provides an animated dialog to display a child, text or textfield
     <tr>
     <tr>
         <td>
-            <img src="assets/Screenshot-PopupWithChild.jpg" width="300">
+            <img src="https://raw.githubusercontent.com/C4s4r/animated_popup_dialog/main/assets/Screenshot-PopupWithChild.jpg" width="300">
         </td>
         <td>
-            <img src="assets/Screenshot-PopupWithText.jpg" width="300">
+            <img src="https://raw.githubusercontent.com/C4s4r/animated_popup_dialog/main/assets/Screenshot-PopupWithText.jpg" width="300">
         </td>
         <td>
-            <img src="assets/Screenshot-PopupWithTextfield.jpg" width="300">
+            <img src="https://raw.githubusercontent.com/C4s4r/animated_popup_dialog/main/assets/Screenshot-PopupWithTextfield.jpg" width="300">
         </td>
     </tr>
 </table>

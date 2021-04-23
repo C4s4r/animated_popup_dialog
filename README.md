@@ -5,6 +5,41 @@
 
 A package that provides an animated dialog to display a child, text or textfield in a modern look.
 
+</br>
+<table >
+    <tr>
+        <td>
+            <b>
+                Any child you want
+            </b>
+        </td>
+        <td>
+            <b>
+                Combination of title<br> and description
+            </b>
+        </td>
+        <td>
+            <b>
+                Title and textfield
+            </b>
+        </td>
+    <tr>
+    <tr>
+        <td>
+            <img src="assets/Screenshot-PopupWithChild.jpg" width="300">
+        </td>
+        <td>
+            <img src="assets/Screenshot-PopupWithText.jpg" width="300">
+        </td>
+        <td>
+            <img src="assets/Screenshot-PopupWithTextfield.jpg" width="300">
+        </td>
+    </tr>
+</table>
+</br>
+
+You can see the implementation of the different types further down this text and in the [example](https://github.com/C4s4r/animated_popup_dialog/tree/main/example) folder.
+
 ## Getting Started
 
 As usual, begin by adding the package to your pubspec.yaml file, see [install instruction](https://pub.dev/packages/animated_popup_dialog/install).
